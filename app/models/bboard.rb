@@ -1,0 +1,2 @@
+class Bboard < ApplicationRecord
+end
