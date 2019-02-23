@@ -1,2 +1,14 @@
-<h1>Bboards#show</h1>
-<p>Find me in app/views/bboards/show.html.erb</p>
+<div class="ui card">
+  <div class="header">
+    <h1><%= @bboard.name %></h1>
+  </div>
+    <hr />
+    <p>What would you like to do?</p>
+    <%= link_to 'View Songs', bboard_songs_path(@bboard) %>
+    <br />
+    <%= link_to 'Edit Billboard', edit_bboard_path(@bboard) %>
+    <br />
+    <%= link_to 'Delete this Billboard', @bboard, method: :delete %>
+    <br />
+    <%= link_to 'Back', bboards_path %>
+</div>

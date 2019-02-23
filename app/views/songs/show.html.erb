@@ -1,2 +1,11 @@
-<h1>Songs#show</h1>
-<p>Find me in app/views/songs/show.html.erb</p>
+<h1><%= @artist.name %></h1>
+<h4>Name: <%= @song.title %></h4>
+<h4>Album: <%= @song.album %></h4>
+<h4>Time: <%= @song.time %></h4>
+<h4>Video: <%= @song.video %></h4>
+<br />
+
+<br />
+<%= link_to 'Edit Song', edit_artist_song_path([@artist, @song]) %> |
+<%= link_to 'Delete Song', [@artist, @song], method: :delete %> |
+<%= link_to 'Back To Songs', artist_songs_path(@artist) %>

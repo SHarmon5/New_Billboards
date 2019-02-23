@@ -24,6 +24,8 @@ gem 'semantic-ui-sass'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
+# Adds Spotify Web API
+gem 'rspotify'
 
 
 group :development, :test do

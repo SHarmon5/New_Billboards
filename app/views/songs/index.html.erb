@@ -1,2 +1,18 @@
-<h1>Songs#index</h1>
-<p>Find me in app/views/songs/index.html.erb</p>
+<h1>Songs</h1>
+<hr />
+  <%= link_to 'Add a Song', new_artist_song_path(@artist) %>
+<ul>
+  <% @song.each do |song| %>
+    <li><%= link_to song.title, [@artist, song] %></li>
+    <%= link_to 'Edit a song', edit_artist_song_path(@artist, song) %>
+    <%= link_to 'Delete a song', [@artist, song], method: :delete %>
+    <% end %>
+
+    <br />
+    <br />
+    <hr />
+    <%= link_to 'Back to Artists', artists_path %>
+    <%= link_to 'Back to Billboards', bboards_path %>
+    
+  
+</ul>

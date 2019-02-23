@@ -1,0 +1,17 @@
+<%= form_with(model: [@artist, @song], local: true, class: "ui form") do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, required: true, autofocus: true %>
+  <br />
+  <%= f.label :album %>
+  <%= f.text_field :album %>
+  <br />
+  <%= f.label :time %>
+  <%= f.text_field :time %>
+  <br />
+  <%= f.label :video %>
+  <%= f.text_field :video %>
+  <br />
+  <br />
+  <%= f.submit nil, class: "ui button"%>
+<% end %>
+  
