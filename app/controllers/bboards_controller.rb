@@ -6,9 +6,11 @@ class BboardsController < ApplicationController
   end
 
   def show
+    
   end
 
   def new
+    @artist = Artist.all
     @bboard = Bboard.new
   end
 

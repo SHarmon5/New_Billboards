@@ -1,11 +1,11 @@
-<h1>Songs</h1>
+<h1><%= "#{@artist.name}'s Songs" %></h1>
 <hr />
   <%= link_to 'Add a Song', new_artist_song_path(@artist) %>
 <ul>
   <% @song.each do |song| %>
-    <li><%= link_to song.title, [@artist, song] %></li>
-    <%= link_to 'Edit a song', edit_artist_song_path(@artist, song) %>
-    <%= link_to 'Delete a song', [@artist, song], method: :delete %>
+    <li><%= link_to song.title, [@artist, song] %><%="  Album: #{song.album}  Time: #{song.time}"%></li>
+    <%= link_to 'Edit', edit_artist_song_path(@artist, song) %>
+    <%= link_to 'Delete', [@artist, song], method: :delete %>
     <% end %>
 
     <br />
