@@ -1,5 +1,4 @@
 class SongsController < ApplicationController
-  before_action :set_bboard
   before_action :set_artist
   before_action :set_song, only: [:show, :edit, :update, :destroy]
 
@@ -43,9 +42,6 @@ class SongsController < ApplicationController
   end
 
   private
-  def set_bboard
-    @bboard = Bboard.find(params[:bboard_id])
-  end
 
   def set_artist
     @artist = Artist.find(params[:artist_id])
