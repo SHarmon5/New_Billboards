@@ -44,7 +44,6 @@ class SongsController < ApplicationController
   end
 
   private
-
   def set_artist
     @artist = Artist.find(params[:artist_id])
   end
