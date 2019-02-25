@@ -2,6 +2,9 @@
   <div class="header">
     <h1><%= @bboard.name %></h1>
   </div>
+    <h4><% @bboard.songs.each do |song|%></h4>
+    <%= song.title %>
+    <% end %>
     <hr />
     <p>What would you like to do?</p>
     <br />
@@ -9,5 +12,5 @@
     <br />
     <%= link_to 'Delete this Billboard', @bboard, method: :delete %>
     <br />
-    <%= link_to 'Back', bboards_path %>
+    <%= link_to 'Back to Billboards', bboards_path %>
 </div>

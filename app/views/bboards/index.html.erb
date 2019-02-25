@@ -2,7 +2,8 @@
 
 
   <% @bboards.each do |bboard| %>
-    <li><%= link_to bboard.name, bboard_path(bboard) %></li>
+    <li><%= link_to bboard.name, bboard_path(bboard) %><%="  #{bboard.genre}"%>
+    </li>
   <% end %>
   <hr />
   <%= link_to 'Create a new Billboard', new_bboard_path %> |

@@ -10,11 +10,13 @@ class SongsController < ApplicationController
   end
 
   def new
+    @bboards = Bboard.all
     @song = @artist.songs.new
     
   end
 
   def edit
+    @bboards = Bboard.all
   
   end
 
@@ -38,7 +40,7 @@ class SongsController < ApplicationController
 
   def destroy
     @song.destroy
-    redirect_to artist_songs_path
+    redirect_to artist_songs_path(@artist)
   end
 
   private
@@ -52,6 +54,6 @@ class SongsController < ApplicationController
   end
 
   def song_params
-    params.require(:song).permit(:title, :album, :time, :video)
+    params.require(:song).permit(:title, :album, :time, :video, :bboard_id)
   end
 end
