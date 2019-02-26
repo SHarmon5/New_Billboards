@@ -4,9 +4,12 @@
   </div>
     <h4><% @bboard.songs.each do |song|%></h4>
     <%= song.title %>
+    <%= link_to 'Delete', remove_bboard_song_path(@bboard, song), method: :delete %>
     <% end %>
     <hr />
     <p>What would you like to do?</p>
+    <br />
+    <%= link_to 'Add Songs', artists_path %>
     <br />
     <%= link_to 'Edit Billboard', edit_bboard_path(@bboard) %>
     <br />

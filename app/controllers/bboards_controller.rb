@@ -1,12 +1,12 @@
 class BboardsController < ApplicationController
-  before_action :set_bboard, only: [:show, :edit, :update, :destroy]
+  before_action :set_bboard, only: [:show, :edit, :destroy]
 
   def index
     @bboards = Bboard.all
   end
 
-  def show
-    
+  def show 
+    @songs = @bboard.songs
   end
 
   def new
@@ -38,6 +38,11 @@ class BboardsController < ApplicationController
     @bboard.destroy
     redirect_to bboards_path
   end
+  def remove_song
+     # remove the billboard_id so it is no longer associated
+     Song.find(params[:song_id]).update(bboard_id: nil)
+     redirect_to bboards_path
+   end
 
   private
 
