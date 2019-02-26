@@ -2,7 +2,7 @@ class BboardsController < ApplicationController
   before_action :set_bboard, only: [:show, :edit, :destroy]
 
   def index
-    @bboards = Bboard.all
+    @bboards = current_user.bboards
   end
 
   def show 
@@ -17,11 +17,13 @@ class BboardsController < ApplicationController
   end
 
   def create
-    @bboard = Bboard.new(bboard_params)
+    @bboard = current_user.bboards.new(bboard_params)
     
     if @bboard.save
+      flash[:success] = "Billboard Created"
       redirect_to bboards_path
     else
+      flash[:error] = "Error #{@bboard.errors.full_messages.join("\n")}"
       render :new
     end
   end
@@ -47,7 +49,7 @@ class BboardsController < ApplicationController
   private
 
   def set_bboard
-    @bboard = Bboard.find(params[:id])
+    @bboard = current_user.bboards.find(params[:id])
   end
 
   def bboard_params

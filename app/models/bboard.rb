@@ -1,5 +1,5 @@
 class Bboard < ApplicationRecord
-  has_many :songs
   belongs_to :user
+  has_many :songs
   
 end
